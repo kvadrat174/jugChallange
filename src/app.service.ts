@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Bucket } from './dto/bucket.dto';
 import { JugBody } from './dto/common.dto';
 import { gcd } from './helpers';
@@ -17,11 +17,11 @@ export class AppService {
     const bucketTwo = new Bucket(y, 'bucket y')
 
     if ((z > x && z > y) || (x === y && x !== z)) {
-      return "No Solution"
+      throw new NotFoundException("No Solution")
     }
 
     if ((z % gcd(bucketOne.volume, bucketTwo.volume)) != 0)
-      return "No Solution";
+      throw new NotFoundException("No Solution")
 
     const variantOne = this.pourBucket(bucketOne, bucketTwo, z)
     const variantTwo = this.pourBucket(bucketTwo, bucketOne, z)
