@@ -1,4 +1,4 @@
-# jugChallange
+# jugChallenge
 
 Nest JS application to solve Jug Challenge
 
