@@ -12,7 +12,7 @@ To run locally make commands:
 - `yarn start:dev`
 
 In this way path to your requests will be:
-- `POST localhost:3000/api/jugchallange/jug`
+- `POST localhost:3000/api/jugchallenge/jug`
 
 example payload - {
     "x":3,
@@ -33,8 +33,8 @@ To run with docker compose:
 
 In this way path to your requests will be:
 
-- `POST localhost/api/jugchallange/jug`
+- `POST localhost/api/jugchallenge/jug`
 
 # Swagger
 
-- `/api/jugchallange/docs`
+- `/api/jugchallenge/docs`
