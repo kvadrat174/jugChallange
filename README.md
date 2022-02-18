@@ -34,3 +34,7 @@ To run with docker compose:
 In this way path to your requests will be:
 
 - `POST localhost/api/jugchallange/jug`
+
+# Swagger
+
+- `/api/jugchallange/docs`

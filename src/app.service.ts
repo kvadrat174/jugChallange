@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Bucket } from './dto/problem.dto';
-import { JugBody } from './dto/request.dto';
+import { Bucket } from './dto/bucket.dto';
+import { JugBody } from './dto/common.dto';
 import { gcd } from './helpers';
 
 @Injectable()

@@ -1,18 +1,15 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
-import { ApiQuery } from '@nestjs/swagger';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
-import { JugBody } from './dto/request.dto';
+import { JugBody, JugResponse } from './dto/common.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
-
+  @ApiTags('Water Jug Challenge')
+  @ApiBody({ type: JugBody })
+  @ApiOkResponse({ status: 201, type: JugResponse })
   @Post('jug')
   solve(
     @Body() jugbody: JugBody
