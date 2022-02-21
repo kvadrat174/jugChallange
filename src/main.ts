@@ -1,3 +1,4 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
@@ -11,6 +12,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api/jugchallenge');
 
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
   const document = SwaggerModule.createDocument(app, options);
 
   SwaggerModule.setup(`api/jugchallenge/docs`, app, document);
